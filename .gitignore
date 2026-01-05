@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Netlify
+.netlify/
+
+# Large media files (already in public/videos/)
+public/videos/hero.mp4
+public/videos/hero.webm
+public/videos/choregraphie_neorealite.mp4
+
+# Build artifacts
+.next/cache/
+node_modules/.cache/
