@@ -1,0 +1,29 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_PUBLIC_ANALYTICS_ID = ""
+
+# Headers pour optimiser le cache et permettre la lecture vidéo
+[[headers]]
+  for = "/videos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+# Redirections pour SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Configuration pour Next.js
+[context.production.environment]
+  NODE_VERSION = "18"
+
+# Exclure les fichiers inutiles du déploiement
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+
