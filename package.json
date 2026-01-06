@@ -7,8 +7,7 @@
     "prebuild": "node scripts/optimize-video.js",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "netlify-build": "./netlify.build.sh"
+    "lint": "eslint"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",
@@ -26,5 +25,8 @@
     "netlify-cli": "^23.13.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

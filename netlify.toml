@@ -1,22 +1,12 @@
 [build]
-  command = "npm run netlify-build"
+  command = "npm run build"
   publish = ".next"
   functions = ".netlify/functions/"
 
 [build.environment]
   NEXT_PUBLIC_ANALYTICS_ID = ""
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
-  
-# Cache optimization
-[build.processing]
-  skip_processing = true
-
-# Cache dependencies between builds
-[[plugins]]
-  package = "@netlify/plugin-cache"
-  inputs:
-    paths = ["node_modules/.cache", ".next/cache"]
 
 # Headers pour optimiser le cache et permettre la lecture vidéo
 [[headers]]
@@ -33,10 +23,15 @@
 
 # Configuration pour Next.js
 [context.production.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
 
-# Exclure les fichiers inutiles du déploiement
+# Plugin Next.js pour Netlify
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-
+# Cache plugin pour accélérer les builds
+# Note: Plugin temporairement désactivé car non disponible sur npm
+# [[plugins]]
+#   package = "@netlify/plugin-cache"
+#   [plugins.inputs]
+#     paths = ["node_modules/.cache", ".next/cache"]

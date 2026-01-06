@@ -51,3 +51,4 @@ public/videos/choregraphie_neorealite.mp4
 # Build artifacts
 .next/cache/
 node_modules/.cache/
+aquamedias-netlify.zip

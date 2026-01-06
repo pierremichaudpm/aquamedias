@@ -38,3 +38,11 @@ if (fs.existsSync(optimizedVideo)) {
 console.log('Vérification terminée.');
 
 
+
+
+
+
+
+
+
+
